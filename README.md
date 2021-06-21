@@ -10,5 +10,6 @@
 
 ## [Projeto final:](./Projeto/README.md) 
 
-Apresente uma breve descrição do seu projeto.
+Tema do trabalho prático: Sistema de gestão financeira
 
+A princípio, o sistema requer um login para que o usuário possa ter acesso às funcionalidades. Após sua validação, o usuário tem acesso a página principal no qual pode navegar pelo menu e escolher o que deseja utilizar. O sistema terá a funcionalidade de inserir, atualizar e deletar dados financeiros, como gastos, ganhos e orçamentos. Controle financeiro genérico.
