@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
+    crossorigin="anonymous">
+
+    <script>
+
+        function toDo(tarefa, tempo){
+            this.tarefa = tarefa;
+            this.tempo = tempo;
+        }
+
+        function carregarDadosDoForm(){
+            const tarefa = document.formulario.tarefa.value;
+            const tempo = document.formulario.tempo.value;
+
+            const fazer = new toDo(tarefa, tempo);
+            console.log(fazer);
+
+            window.alert(`Dados carregados com sucesso: Fazer ${tarefa} durante ${tempo} segundos.`);             
+        }
+        
+    </script>
+
+</head>
+<body>
+
+    <form action="post" name="formulario">
+        <div class="form-group">
+            <label for="tarefa">Qual tarefa você quer executar?</label>
+            <input type="text" name="tarefa" id="tarefa" placeholder="Assistir aulas de Web I ..." class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="tempo">Qual tempo você quer gastar com essa tarefa?</label>
+            <input type="number" name="tarefa" id="tarefa" placeholder="O valor dado neste campo são segundos" class="form-control">
+        </div>
+    </form>
+
+    <div id="contador" class="jumbotron">
+        
+    </div>
+    
+</body>
+</html>
