@@ -3,67 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Cadastro de tarefa</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
     rel="stylesheet" 
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
     crossorigin="anonymous">
+    
+    <script>
+
+        function toDo(tarefa, tempo){
+            this.tarefa = tarefa;
+            this.tempo = tempo;
+        }
+
+        function carregarDadosDoForm(){
+            const tarefa = document.formulario.tarefa.value;
+            const tempo = document.formulario.tempo.value;
+
+            const fazer = new toDo(tarefa, tempo);
+            console.log(fazer);
+
+            window.alert(`Dados carregados com sucesso: Fazer ${tarefa} durante ${tempo} segundos.`);             
+        }
+        
+    </script>
 
 </head>
 <body>
-    <form method="get" action="relatorio.html">
-        <a href="01-intro.html" class="btn btn-primary">VOLTAR</a>
 
+    <div class="jumbotron">
+        <h1>Cadastre sua tarefa do dia!</h1>
+    </div>
+
+    <form action="post" name="formulario">
         <div class="form-group">
-            <label for="nome">Nome: </label>
-            <input type="text" name="nome" id="nome" placeholder="Nome completo" class="form-control">
+            <label for="tarefa">Qual tarefa você quer executar?</label>
+            <input type="text" name="tarefa" id="tarefa" placeholder="Assistir aulas de Web I ..." class="form-control">
         </div>
-
         <div class="form-group">
-            <label for="cpf">CPF: </label>
-            <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="xxx.xxx.xxx-xx" class="form-control">
+            <label for="tempo">Qual tempo você quer gastar com essa tarefa?</label>
+            <input type="number" name="tarefa" id="tarefa" placeholder="O valor dado neste campo são segundos" class="form-control">
         </div>
-
-        <div>
-            <label class="form-check-label">Sexo: </label>
-            
-            <div class="form-group form-check">
-                <input type="radio" name="sexo" id="masculino" value="M" class="form-check-input">
-                <label for="masculino" class="form-check-label">Masculino</label>
-            </div>
-            <div class="form-group form-check">
-                <input type="radio" name="sexo" id="feminino" value="F" class="form-check-input">
-                <label for="feminino" class="form-check-label">Feminino</label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="telefone">Data de nascimento: </label>
-            <input type="date" name="datanasc" id="datanasc">
-        </div>
-
-        <div class="form-group">
-            <label for="endereco">Endereço: </label>
-            <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço" class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label for="telefone">Telefone: </label>
-            <input type="tel" name="telefone" id="telefone" size="3" maxlength="3" placeholder="DDD"> 
-            <input type="tel" name="telefone" id="telefone" placeholder="Telefone" maxlength="9">
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email: </label>
-            <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@web.ufop.edu.br" placeholder="email@web.ufop.edu.br" class="form-control">
-        </div>
-
-
-        <input type="submit" value="Cadastrar" class="btn btn-success">
-        <input type="reset" value="Limpar" class="btn btn-danger">
-        <!-- <button onclick= "window.location.href = 'introducao.html';">Voltar</button> -->
-
     </form>
+
+    <input type="button" value="Salvar" class="btn btn-primary" onclick="carregarDadosDoForm()">
+    
 </body>
 </html>
