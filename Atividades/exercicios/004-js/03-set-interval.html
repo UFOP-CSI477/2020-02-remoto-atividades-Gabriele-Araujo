@@ -12,19 +12,18 @@
 
     <script>
 
-        function toDo(tarefa, tempo){
-            this.tarefa = tarefa;
-            this.tempo = tempo;
-        }
+        function carregarDadosUrl() {
+            
+            let url = new URLSearchParams(window.location.search);
 
-        function carregarDadosDoForm(){
-            const tarefa = document.formulario.tarefa.value;
-            const tempo = document.formulario.tempo.value;
+            let tarefa = url.get("tarefa");
+            let tempo = url.get("tempo");
 
-            const fazer = new toDo(tarefa, tempo);
-            console.log(fazer);
+            console.log({tarefa, tempo});
 
-            window.alert(`Dados carregados com sucesso: Fazer ${tarefa} durante ${tempo} segundos.`);             
+            document.formulario.tarefa.value = tarefa;
+            document.formulario.tempo.value = tempo;
+
         }
         
     </script>
@@ -32,16 +31,18 @@
 </head>
 <body>
 
-    <form action="post" name="formulario">
+    <form action="03-set-interval.html" method="GET" name="formulario">
         <div class="form-group">
             <label for="tarefa">Qual tarefa você quer executar?</label>
             <input type="text" name="tarefa" id="tarefa" placeholder="Assistir aulas de Web I ..." class="form-control">
         </div>
         <div class="form-group">
             <label for="tempo">Qual tempo você quer gastar com essa tarefa?</label>
-            <input type="number" name="tarefa" id="tarefa" placeholder="O valor dado neste campo são segundos" class="form-control">
+            <input type="number" name="tempo" id="tempo" placeholder="O valor dado neste campo são segundos" class="form-control">
         </div>
     </form>
+
+    <input type="button" value="Carregar dados" class="btn btn-primary" onclick="carregarDadosUrl()">    
 
     <div id="contador" class="jumbotron">
         
