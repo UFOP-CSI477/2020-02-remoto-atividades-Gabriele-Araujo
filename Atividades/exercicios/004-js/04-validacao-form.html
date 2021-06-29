@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo - validação do formulário com Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Cadastro de pessoas</h1>
+    <form method="get" action="relatorio.html" name="dados">
+        
+        <div>
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" id="nome" placeholder="Nome completo">
+        </div>
+
+        <div>
+            <label for="cpf">CPF: </label>
+            <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="xxx.xxx.xxx-xx">
+        </div>
+
+        <div>
+            <label>Sexo:</label>
+            
+                <input type="radio" name="sexo" id="masculino" value="M">
+                <label for="masculino">Masculino</label>
+                
+                <input type="radio" name="sexo" id="feminino" value="F">
+                <label for="feminino">Feminino</label>
+        </div>
+
+        <div>
+            <label for="telefone">Data de nascimento: </label>
+            <input type="date" name="datanasc" id="datanasc">
+        </div>
+
+        <div>
+            <label for="endereco">Endereço: </label>
+            <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço">
+        </div>
+
+        <div>
+            <label for="telefone">Telefone: </label>
+            <input type="tel" name="telefone" id="telefone" size="3" maxlength="3" placeholder="DDD"> 
+            <input type="tel" name="telefone" id="telefone" placeholder="Telefone" maxlength="9">
+        </div>
+
+        <div>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@web.ufop.edu.br" placeholder="email@web.ufop.edu.br">
+        </div>
+
+
+        <input type="submit" value="Cadastrar" name="cadastrar">
+        <input type="reset" value="Limpar">
+        <!-- <button onclick= "window.location.href = 'introducao.html';">Voltar</button> -->
+
+    </form>
+
+    <a href="/Atividades/exercicios/004-js/introducao.html">Voltar</a>
+
+</body>
+
+</html>
