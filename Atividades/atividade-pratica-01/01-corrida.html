@@ -8,6 +8,65 @@
 
     <title>Competição Rolimã</title>
     
+</head>
+<body>
+    <div class="container">
+        
+        <div class="jumbotron bg-light">
+            <h1 class="text-center">Competição de carrinhos de Rolimã</h1>
+            <p class="lead text-center">APURAÇÃO E RESULTADOS</p>
+        </div>
+        
+        <div class="form-group">
+            <form>
+                <div class="row">
+                    <div class="col-5">
+                        <label  for="nome">Competidor:</label>
+                        <input type="text" name="nomeJogador" id="nome" class="form-control" placeholder="Digite o nome do competidor" >
+                    </div>
+                    <div class="col-5">
+                        <label for="tempo">Tempo (em seg):</label>
+                        <input type="number" name="tempoJogador" id="tempo" class="form-control" placeholder="Digite o tempo de prova em segundos">
+                    </div>
+                    <div class="col-2 py-2 px-3">
+                        <button type="button" class="btn btn-success text-white font-weight-bold border-info border"
+                            onclick="inserirCompetidor()" id="inserir">INSERIR COMPETIDOR</button>
+                    </div>
+            </form>
+        </div>
+       
+        <div class="table-responsive py-2">
+            <table id="tabelaLargada" class="table table-hover table-bordered table-striped">
+                <thead class="table-secondary">  
+                    <tr class="align-items-center">
+                        <th>Largada</th>
+                        <th>Competidor</th>
+                        <th>Tempo</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="d-flex justify-content-center py-2">
+            <button type="button" class=" btn btn-primary text-white font-weight-bold border-info border mr-2" onclick="resultado()" id="resultado" disabled>RESULTADO</button>
+            <button type="button" class=" btn btn-secondary text-white font-weight-bold border-info border ml-2" onclick="recarrega()" id="novamente" disabled >NOVA APURAÇÃO</button>
+        </div>
+
+        <div class="table-responsive py-3">
+            <table id="tabelaApuracao" class="table table-bordered table-striped border-dark bg-white rounded">
+                <thead class="table-secondary">
+                    <tr class="align-items-center">
+                        <th>Posição</th>
+                        <th>Largada</th>
+                        <th>Tempo</th>
+                        <th>Competidor</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    
     <script>
         var quantParticipantes = 0;
         let listaParticipantes = [];
@@ -101,63 +160,5 @@
             location.reload();
         }
     </script>
-</head>
-<body>
-    <div class="container">
-        
-        <div class="jumbotron bg-light">
-            <h1 class="text-center">Competição de carrinhos de rolimã</h1>
-            <p class="lead text-center">Resultados</p>
-        </div>
-        
-        <div class="form-group">
-            <form>
-                <div class="row">
-                    <div class="col-5">
-                        <label  for="nome">Competidor:</label>
-                        <input type="text" name="nomeJogador" id="nome" class="form-control" placeholder="Digite o nome do competidor" >
-                    </div>
-                    <div class="col-5">
-                        <label for="tempo">Tempo (em seg):</label>
-                        <input type="number" name="tempoJogador" id="tempo" class="form-control" placeholder="Digite o tempo de prova em segundos">
-                    </div>
-                    <div class="col-2 py-2 px-3">
-                        <button type="button" class="btn btn-success text-white font-weight-bold border-info border"
-                            onclick="inserirCompetidor()" id="inserir">INSERIR COMPETIDOR</button>
-                    </div>
-            </form>
-        </div>
-       
-        <div class="table-responsive py-2">
-            <table id="tabelaLargada" class="table table-hover table-bordered table-striped">
-                <thead class="table-secondary">  
-                    <tr class="align-items-center">
-                        <th>Largada</th>
-                        <th>Competidor</th>
-                        <th>Tempo</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-
-        <div class="d-flex justify-content-center py-2">
-            <button type="button" class=" btn btn-primary text-white font-weight-bold border-info border mr-2" onclick="resultado()" id="resultado" disabled>Resultado</button>
-            <button type="button" class=" btn btn-secondary text-white font-weight-bold border-info border ml-2" onclick="recarrega()" id="novamente" disabled >Nova Apuração</button>
-        </div>
-
-        <div class="table-responsive py-3">
-            <table id="tabelaApuracao" class="table table-bordered table-striped border-dark bg-white rounded">
-                <thead class="table-secondary">
-                    <tr class="align-items-center">
-                        <th>Posição</th>
-                        <th>Largada</th>
-                        <th>Tempo</th>
-                        <th>Competidor</th>
-                        <th>Resultado</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
 </body>
 </html>
