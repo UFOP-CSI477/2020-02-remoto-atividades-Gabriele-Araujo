@@ -9,7 +9,7 @@
     <title>Sistema Pix</title>
 
 </head>
-<body onload="carregarBancos()">
+<body onload="carregarBancosForm()">
 
     <div class="container">
         <div class="jumbotron bg-light">
@@ -107,29 +107,6 @@
         
         function limpar(){
             location.reload();
-        }
-
-        function carregarBancos(data){
-            
-            let estados = document.getElementById("estados");
-
-            for (let index in data){
-                const {id, nome, sigla} = data[index];
-
-                let option = document.createElement("option");
-                option.value = id;
-                option.innerHTML = `${nome}-${sigla}`;
-
-                estados.appendChild(option);
-            }
-        }
-
-        function carregarBancosForm(){
-            fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
-                .then(response => response.json())
-                .then(data => carregarBancos(data))
-                .catch(error => console.error(error))
-                
         }
 
         function inserir(){
