@@ -12,6 +12,7 @@
 <body onload="carregarBancos()">
 
     <div class="container">
+        
         <div class="jumbotron bg-light">
             <h1 class="text-center">Sistema Pix</h1>
             <p class="lead text-center">Complete as informações para que seja possível enviar ou receber transferências</p>
@@ -63,34 +64,34 @@
                         <input type="date" name="data" id="data" class="form-control" min="" max="2021-08-30" onclick="dataMin()">
                     </div>
                 </div>
-
-                <div class="d-flex justify-content-center py-5">
-                    <button type="button" class=" btn btn-secondary text-white font-weight-bold border-info border ml-2" onclick="limpar()" id="limpar" disabled >LIMPAR</button>
-                    <button type="button" class=" btn btn-success text-white font-weight-bold border-info border ml-2" onclick="relatorio()" id="finalizar" disabled >FINALIZAR</button>
-                </div>
-
-                <div class="table-responsive py-2">
-                    <table id="tabelaApuracao" class="table table-bordered table-striped border-dark bg-white rounded">
-                        <thead class="table-secondary">
-                            <tr class="align-items-center">
-                                <th>Data</th>
-                                <th>Operação</th>
-                                <th>Chave Pix</th>
-                                <th>Agência Bancária</th>
-                                <th>Valor</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-
             </form>
+        </div>
 
+        <div class="d-flex justify-content-center py-5">
+            <button type="button" class=" btn btn-primary text-white font-weight-bold border-info border mr-2" onclick="relatorio()" id="finalizar">FINALIZAR</button>
+            <button type="button" class=" btn btn-secondary text-white font-weight-bold border-info border ml-2" onclick="limpar()" id="limpar">LIMPAR</button>
+        </div>
+
+        <div class="table-responsive py-2">
+            <table id="tabelaRelatorio" class="table table-bordered table-striped border-dark bg-white rounded">
+                <thead class="table-secondary">
+                    <tr class="align-items-center">
+                        <th>Data</th>
+                        <th>Operação</th>
+                        <th>Tipo Pix</th>
+                        <th>Chave Pix</th>
+                        <th>Agência Bancária</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
 
     </div>
 
-
     <script>
+
+        let listaDados = [];
 
         function preencherSelectBancos(data){
             let banco = document.getElementById("banco");
@@ -133,28 +134,58 @@
             location.reload();
         }
 
-        function inserir(){
-            var nome = document.getElementById('nome');
-            var tempo = document.getElementById('tempo');
-            if (quantParticipantes<= 6){
-                if (verificaInserir(nome) && verificaInserir(tempo)){
-                    quantParticipantes += 1;
-                    var linha = document.createElement('tr');
-                        linha.insertCell(0).innerHTML = quantParticipantes;
-                        linha.insertCell(1).innerHTML = nome.value;
-                        linha.insertCell(2).innerHTML = parseInt(tempo.value);
-                    const participante = new Participante(nome.value, tempo.value, quantParticipantes);
-                        listaParticipantes.push(participante);
-                    
-                    document.getElementById('tabelaLargada').appendChild(linha);
-                    document.getElementById('resultado').disabled = false;
-                    nome.value = "";
-                    tempo.value = "";
-                }
+        function verificaInserir(valor){
+            valor.classList.remove('invalid');
+            if (valor.value.length > 0){
+                return true;
+            } else{
+                valor.classList.add('invalid');
             }
+        }
+
+        function Dado(data, operacao, tipo, chave, banco, valor){
+            this.data = data;
+            this.operacao = operacao;
+            this.tipo = tipo;
+            this.chave = chave;
+            this.banco = banco;
+            this.valor = valor;
+        }
+
+        function relatorio(){
+            var data = document.getElementById('data');
+            var operacao = document.getElementById('operacao');
+            var tipo = document.getElementById('tipo');
+            var chave = document.getElementById('chave');
+            var banco = document.getElementById('banco')
+            var valor = document.getElementById('valor');
+
+            if (verificaInserir(data) && verificaInserir(operacao) && verificaInserir(tipo) && verificaInserir(chave) && verificaInserir(banco) && verificaInserir(valor)){
+
+                var linha = document.createElement('tr');
+                    linha.insertCell(0).innerHTML = data.value;
+                    linha.insertCell(1).innerHTML = operacao.value;
+                    linha.insertCell(2).innerHTML = tipo.value;
+                    linha.insertCell(3).innerHTML = chave.value;
+                    linha.insertCell(4).innerHTML = banco.value;
+                    linha.insertCell(5).innerHTML = "R$" + parseInt(valor.value);
+                
+                    const dado = new Dado(data.value, operacao.value, tipo.value, chave.value, banco.value, valor.value);
+                    listaDados.push(dado);
+                    
+                    document.getElementById('tabelaRelatorio').appendChild(linha);
+                    document.getElementById('finalizar').disabled = false;
+                    data.value = "";
+                    operacao.value = "";
+                    tipo.value= "";
+                    chave.value = "";
+                    banco.value = "";
+                    valor.value = "";
+            }
+            
 
             if (parseInt(quantParticipantes) === 6){
-                document.getElementById('finalizar').disabled = true;
+                document.getElementById('inserir').disabled = true;
                 tempo.disabled = true;
                 nome.disabled = true;
             }
