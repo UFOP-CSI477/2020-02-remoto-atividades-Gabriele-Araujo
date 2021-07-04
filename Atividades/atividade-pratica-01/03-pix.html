@@ -9,7 +9,7 @@
     <title>Sistema Pix</title>
 
 </head>
-<body onload="carregarBancosForm()">
+<body onload="carregarBancos()">
 
     <div class="container">
         <div class="jumbotron bg-light">
@@ -82,12 +82,36 @@
                         </thead>
                     </table>
                 </div>
+
             </form>
+
         </div>
+
     </div>
 
 
     <script>
+
+        function preencherSelectBancos(data){
+            let banco = document.getElementById("banco");
+            
+            for (let index in data){
+            const {name, code} = data[index];
+
+            let option = document.createElement('option');
+            option.value = `${code} - ${name}`;
+            option.innerHTML = `${code} - ${name}`;
+
+            banco.appendChild(option);
+            }
+        }
+
+        function carregarBancos(){
+            fetch("https://brasilapi.com.br/api/banks/v1")
+                .then(response => response.json())
+                .then(data => preencherSelectBancos(data))
+                .catch(error => console.error(error))
+        }
 
         function dataMin(){
             var hoje = new Date();
@@ -135,7 +159,7 @@
                 nome.disabled = true;
             }
         }
-
+ 
     </script>
 
 </body>
