@@ -53,7 +53,7 @@
         </div>
 
         <div class="table-responsive py-3">
-            <table id="tabelaApuracao" class="table table-bordered table-striped border-dark bg-white rounded">
+            <table id="tabelaFinal" class="table table-bordered table-striped border-dark bg-white rounded">
                 <thead class="table-secondary">
                     <tr class="align-items-center">
                         <th>Quantidade total de combustível utilizado</th>
@@ -70,6 +70,10 @@
     <script>
         
         let listaVeiculos = [];
+        var quantCombustivel = 0;
+        var quantKm = 0;
+        var mediaDesempenho = 0;
+        var i=0;
 
         function consumoVeiculo(combustivel, quilometros, desempenho){
             this.combustivel = combustivel;
@@ -78,70 +82,46 @@
         }
         
         function inserirConsumo(){
-            var combustivel = document.getElementById('combustivel');
-            var quilometros = document.getElementById('quilometros');
-            var desempenho = quilometros/combustivel;
+            
+            const combustivel = document.getElementById('combustivel');
+            const quilometros = document.getElementById('quilometros');
+            const desempenho = quilometros.value/combustivel.value;
                 
-                    var linha = document.createElement('tr');
-                        linha.insertCell(0).innerHTML = combustivel.value;
-                        linha.insertCell(1).innerHTML = quilometros.value;
-                        linha.insertCell(2).innerHTML = desempenho;
+            var linha = document.createElement('tr');
+                linha.insertCell(0).innerHTML = combustivel.value;
+                linha.insertCell(1).innerHTML = quilometros.value;
+                linha.insertCell(2).innerHTML = parseFloat(desempenho.toFixed(2));
                     
-                    const veiculo = new consumoVeiculo(combustivel, quilometros, desempenho);
-                        listaVeiculos.push(veiculo);
+                quantCombustivel = parseFloat(quantCombustivel) + parseFloat(combustivel.value);
+                quantKm = parseFloat(quantKm) + parseFloat(quilometros.value);
+                mediaDesempenho = parseFloat(mediaDesempenho) + parseFloat(desempenho.toFixed(2));
                     
-                    document.getElementById('tabelaConsumo').appendChild(linha);
-                    document.getElementById('finalizar').disabled = false;
-                    nome.value = "";
-                    tempo.value = "";
+            i++;
+            const veiculo = new consumoVeiculo(combustivel, quilometros, desempenho);
+                listaVeiculos.push(veiculo);
+                    
+            document.getElementById('tabelaConsumo').appendChild(linha);
+            document.getElementById('finalizar').disabled = false;
+                combustivel.value = "";
+                quilometros.value = "";
+                desempenho.value = "";
         }
 
         function finalizar(){
-            document.getElementById('finalizar').disabled = true;
-            var tempoInicial;
             let linha;
-            
-            if (listaParticipantes.length > 0) {
-                document.getElementById('inserir').disabled = true;
-                tempo.disabled = true;
-                nome.disabled = true;
-
-                listaParticipantes.sort(
-                    function (a, b) {
-                        if (a.tempo < b.tempo) {
-                            return -1;
-                        } else if (a.tempo > b.tempo) {
-                            return 1;
-                        } else {
-                            return 0;
-                        }
-                    }
-                );
-
-                for (var i=0; i<listaParticipantes.length; i++){
-                    tempoInicial = listaParticipantes[0].tempo;
-                    linha = document.createElement('tr');
-
-                        linha.insertCell(0).innerHTML = i + 1;
-                        linha.insertCell(1).innerHTML = listaParticipantes[i].largada;
-                        linha.insertCell(2).innerHTML = listaParticipantes[i].nome;
-                        linha.insertCell(3).innerHTML = listaParticipantes[i].tempo;
-                    
-                        if (listaParticipantes[i].tempo === tempoInicial){
-                        linha.insertCell(4).innerHTML = "Vencedor!";
-                    } else{
-                        linha.insertCell(4).innerHTML = "";
-                    }
-                    
-                    document.getElementById('tabelaApuracao').appendChild(linha);
-                    document.getElementById('limpar').disabled = false;
-                }
-            }
+            linha = document.createElement('tr');
+                linha.insertCell(0).innerHTML = quantCombustivel;
+                linha.insertCell(1).innerHTML = quantKm;
+                linha.insertCell(2).innerHTML = parseFloat(quantCombustivel.toFixed(2))/listaVeiculos.length;
+                linha.insertCell(3).innerHTML = parseFloat(quantKm.toFixed(2))/listaVeiculos.length;
+                linha.insertCell(4).innerHTML = parseFloat(mediaDesempenho.toFixed(2))/listaVeiculos.length;
+            document.getElementById('tabelaFinal').appendChild(linha);
         }
 
         function limpar(){
             location.reload();
         }
+
     </script>
 </body>
 </html>
