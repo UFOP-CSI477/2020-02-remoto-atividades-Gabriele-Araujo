@@ -8,8 +8,8 @@
 <body>
 
     <?php
-        $user = "Fernando";
-        echo "Olá, mundo!, $user";
+        $user = "Gabriele";
+        echo "Olá, mundo!, $user"; //não funciona com aspas simples
     ?>
 
 </body>
