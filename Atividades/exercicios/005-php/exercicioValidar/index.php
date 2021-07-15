@@ -16,8 +16,8 @@
     <form action="validar.php" method="post">
         
         <div class="form-group">
-            <label for="nome">Nome: </label>
-            <input type="text" name="nome" id="nome" placeholder="Nome completo" class="form-control" required>
+            <label for="name">Nome: </label>
+            <input type="text" name="nome" id="name" placeholder="Nome completo" class="form-control" required>
         </div>
 
         <div class="form-group">
@@ -56,7 +56,7 @@
 
         <div class="form-group">
             <label for="email">Email: </label>
-            <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@web.ufop.edu.br" placeholder="email@web.ufop.edu.br" class="form-control" required>
+            <input type="email" name="email" id="email" placeholder="email@web.ufop.edu.br" class="form-control" required>
         </div>
 
         <input type="submit" value="Cadastrar" class="btn btn-success">
