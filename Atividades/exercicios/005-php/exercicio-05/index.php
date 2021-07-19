@@ -61,8 +61,7 @@
 
         <input type="submit" value="Cadastrar" class="btn btn-success">
         <input type="reset" value="Limpar" class="btn btn-danger">
-        <!-- <button onclick= "window.location.href = 'introducao.html';">Voltar</button> -->
-
+        
     </form>
 </body>
 </html>
