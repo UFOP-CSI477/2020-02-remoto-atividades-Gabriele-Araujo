@@ -1,31 +1,21 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir estados</title>
+</head>
+<body>
+    
+    <form action="estadosControllerInsert.php" method="post">
+    
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome">
 
-    require 'connection.php';
-
-    $nome = $_POST['nome'];
-    $sigla = $_POST['sigla'];
-
-    if(empty($nome) || empty($sigla)) {
-        echo '<div><a href="estadosViewInsert.php">Voltar</a></div>';
-        die('Informe os dados corretamente');
-    }
-
-    try {
-
-        $connection->beginTransaction();
-
-        $stmt = $connection->prepare("INSERT INTO estados (nome, sigla) VALUES (:nome, :sigla)");
-
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':sigla', $sigla);
-
-        $stmt->execute();
-
-        $connection->commit();
-
-        header('Location: index.php');
-        exit();
-    } catch(Exception $e) {
-        $connection->rollBack();
-        die("Erro ao inserir o estado: " . $e->getMessage());
-    }
+        <label for="sigla">Sigla:</label>
+        <input type="text" name="sigla" id="sigla">
+        
+        <input type="submit" value="Inserir">
+    </form>
+</body>
+</html>
