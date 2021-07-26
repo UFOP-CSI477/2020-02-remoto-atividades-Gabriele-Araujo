@@ -3,7 +3,7 @@
     require 'connection.php';
 
     $nome = $_POST['nome'];
-    $unidade = $_POST['unidade'];
+    $unidade = $_POST['um'];
 
     if(empty($nome) || empty($unidade)) {
         echo '<div><a href="insert.php">Voltar</a></div>';
@@ -14,10 +14,10 @@
 
         $connection->beginTransaction();
 
-        $stmt = $connection->prepare("INSERT INTO produtos (nome, unidade) VALUES (:nome, :unidade)");
+        $stmt = $connection->prepare("INSERT INTO produtos (nome, um) VALUES (:nome, :um)");
 
         $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':unidade', $unidade);
+        $stmt->bindParam(':um', $unidade);
 
         $stmt->execute();
 

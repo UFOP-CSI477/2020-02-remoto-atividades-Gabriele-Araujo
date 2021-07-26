@@ -13,7 +13,7 @@
                     while($e = $produtos->fetch()) {
                         echo "<tr>";
                             echo '<td class="align-items-center">' . $e["nome"] . "</td>\n";
-                            echo '<td class="align-items-center">' . $e['unidade'] . "</td>\n";
+                            echo '<td class="align-items-center">' . $e["um"] . "</td>\n";
                         echo "</tr>";
                     }
                 ?>
