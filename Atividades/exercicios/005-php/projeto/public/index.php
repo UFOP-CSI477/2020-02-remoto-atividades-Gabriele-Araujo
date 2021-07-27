@@ -1,6 +1,6 @@
 <?php
 
-require '../vendor/autoload.php';
+require '../App/Models/Estado.php';
 
 use App\Models\Estado;
 use App\Database\Connection;
