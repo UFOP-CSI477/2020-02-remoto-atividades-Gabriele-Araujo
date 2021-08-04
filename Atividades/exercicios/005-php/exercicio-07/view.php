@@ -7,6 +7,9 @@
     <title>Exercício 07</title>
 </head>
 <body>
+    
+    <a href="insert.php">Inserir</a>
+    
         <table id="tabela" class="table table-bordered table-striped border-dark bg-white rounded">
             <thead class="table-secondary">
                 <?php 
@@ -19,5 +22,7 @@
                 ?>
             </thead>
         </table>
+
+        
 </body>
 </html>
