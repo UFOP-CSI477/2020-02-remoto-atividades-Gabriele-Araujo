@@ -12,12 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Models\Estado;
+use App\Http\Controllers\EstadoController;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('principal');
+})->name('principal');
 
-Route::get('/ola', function(){
+Route::resource('/estados', EstadoController::class);
+
+/* Route::get('/ola', function(){
     return 'Olá, mundo!';
 });
 
@@ -32,4 +36,4 @@ Route::get('/estados/{id}', function($id){
         return 'ID Inválido';
     }
     return view('lista', ['dados'=>$estado]);
-});
+}); */
