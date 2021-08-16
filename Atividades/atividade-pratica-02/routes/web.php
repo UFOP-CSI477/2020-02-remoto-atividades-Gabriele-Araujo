@@ -24,3 +24,7 @@ Route::get('/administrativo', function () {
 Route::get('/suporte', function () {
     return view('site.suporte');
 })->name('site.suporte');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
