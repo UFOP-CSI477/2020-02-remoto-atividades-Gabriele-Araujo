@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('site.home');
 
 Route::get('/administrativo', function () {
     return view('administrativo');
-});
+})->name('site.admin');
 
 Route::get('/suporte', function () {
     return view('suporte');
-});
+})->name('site.suport');
