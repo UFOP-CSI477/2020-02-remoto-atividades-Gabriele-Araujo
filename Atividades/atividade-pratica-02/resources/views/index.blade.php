@@ -24,7 +24,7 @@
                     <td>{{ $e->id }}</td>
                     <td>{{ $e->name }} </td>
                     <td>
-                        <a href="{{url("e/$e->id")}}">
+                        <a href="{{route('equipamentos.show', $e->id)}}">
                             <button class="btn btn-dark">Visualizar</button>
                         </a>
                         <a href="">

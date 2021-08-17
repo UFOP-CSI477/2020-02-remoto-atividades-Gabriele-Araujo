@@ -55,10 +55,9 @@ class BancoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Equipamentos $equipamento)
     {
-        $equipamento = Equipamentos::get($id);
-        return view('show', ['equipamento'=>$equipamento]);
+        return view('equipamentos.show', ['equipamento'=>$equipamento]);
     }
 
     /**

@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/administrativo', 'App\Http\Controllers\BancoController@index');
+Route::resource('/equipamentos', App\Http\Controllers\BancoController::class);
