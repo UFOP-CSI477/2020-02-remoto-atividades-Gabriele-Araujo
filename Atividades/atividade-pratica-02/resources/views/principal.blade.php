@@ -7,7 +7,7 @@
         <a href="{{route('equipamentos.index')}}">
             <button class="btn btn-primary">Área Administrativa</button>
         </a>
-        <a href="{{route('equipamentos.index')}}">
+        <a href="{{route('suporte.index')}}">
             <button class="btn btn-primary">Área Geral - Suporte</button>
         </a>
     </div>

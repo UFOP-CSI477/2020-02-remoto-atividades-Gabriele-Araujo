@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('principal');
 })->name('principal');
 
-Route::resource('/suporte', 'App\Http\Controllers\SuporteController@index');
+Route::resource('/suporte', App\Http\Controllers\SuporteController::class);
 
 //Route::get('/administrativo', 'App\Http\Controllers\BancoController@index');
 Route::resource('/equipamentos', App\Http\Controllers\BancoController::class);

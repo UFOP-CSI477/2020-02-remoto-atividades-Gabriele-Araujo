@@ -2,10 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipamentos;
 use Illuminate\Http\Request;
 
 class SuporteController extends Controller
 {
+    private $objEquipamento;
+
+    public function __construct()
+    {
+        $this->objEquipamento=new Equipamentos();
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,8 @@ class SuporteController extends Controller
      */
     public function index()
     {
-        //
+        $equipamento = Equipamentos::orderBy('name')->paginate(2);
+        return view('suporte.index', ['equipamento'=>$equipamento]);
     }
 
     /**
