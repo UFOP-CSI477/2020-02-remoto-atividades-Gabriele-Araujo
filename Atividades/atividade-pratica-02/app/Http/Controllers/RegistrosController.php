@@ -52,7 +52,7 @@ class RegistrosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Equipamentos $equipamento)
+    public function show(Registros $registro)
     {
         //return view('registros.show', ['registro'=>$registro]);
     }

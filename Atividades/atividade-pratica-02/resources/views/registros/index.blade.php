@@ -24,20 +24,10 @@
             @foreach($registro as $r)
                 <tr>
                     <td>{{ $r->id }}</td>
-                    <td>{{ $r->equipamento_id }} </td>
+                    <td>{{ $r->equipamentos_id }} </td>
                     <td>{{ $r->user_id }} </td>
                     <td>{{ $r->descricao }} </td>
                     <td>
-                        <a href="{{route('equipamentos.show', $e->id)}}">
-                            <button class="btn btn-dark">Visualizar</button>
-                        </a>
-                        <a href="{{route('equipamentos.edit', $e->id)}}">
-                            <button class="btn btn-primary">Editar</button>
-                        </a>
-                        <a href="{{route('equipamentos.destroy', $e->id)}}" class="del">
-                            <button class="btn btn-danger">Deletar</button>
-                        </a>
-                    </td>
                 </tr>
             @endforeach
                 
