@@ -5,7 +5,7 @@
     <h1 class="text-center">Crud</h1>
 
     <div class="text-center">
-        <a href="">
+        <a href="{{route('equipamentos.create')}}">
             <button class="btn btn-success">Cadastrar</button>
         </a>
     </div>
