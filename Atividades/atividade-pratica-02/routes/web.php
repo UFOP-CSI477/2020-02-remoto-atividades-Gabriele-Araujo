@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('principal');
+})->name('principal');
 
-Route::get('/administrativo', 'App\Http\Controllers\BancoController@index');
+Route::resource('/suporte', 'App\Http\Controllers\SuporteController@index');
+
+//Route::get('/administrativo', 'App\Http\Controllers\BancoController@index');
 Route::resource('/equipamentos', App\Http\Controllers\BancoController::class);

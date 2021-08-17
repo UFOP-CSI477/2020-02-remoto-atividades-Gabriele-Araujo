@@ -25,8 +25,8 @@ class BancoController extends Controller
      */
     public function index()
     {
-        $equipamento = Equipamentos::orderBy('id')->get();
-        return view('index', ['equipamento'=>$equipamento]);
+        $equipamento = Equipamentos::orderBy('id')->paginate(2);
+        return view('equipamentos.index', ['equipamento'=>$equipamento]);
     }
 
     /**

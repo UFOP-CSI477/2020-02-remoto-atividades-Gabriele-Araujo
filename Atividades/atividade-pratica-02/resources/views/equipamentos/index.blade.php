@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="text-center">Crud</h1>
+    <h1 class="text-center">Área Administrativa</h1>
 
     <div class="text-center">
         <a href="{{route('equipamentos.create')}}">
@@ -40,6 +40,7 @@
                 
             </tbody>
         </table>
+        {{$equipamento->links("pagination::bootstrap-4")}}
     </div>
 
 @endsection
