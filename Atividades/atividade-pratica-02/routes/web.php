@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('principal');
 })->name('principal');
 
+Route::resource('/registros', App\Http\Controllers\RegistrosController::class);
+
 Route::resource('/suporte', App\Http\Controllers\SuporteController::class);
 
 //Route::get('/administrativo', 'App\Http\Controllers\BancoController@index');
