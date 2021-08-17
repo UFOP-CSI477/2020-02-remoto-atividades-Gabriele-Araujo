@@ -10,6 +10,7 @@
         </a>
     </div>
     <div class="col-8 m-auto">
+    @csrf
         <table class="table text-center mt-3 mb-4">
             <thead>
                 <tr>
@@ -30,7 +31,7 @@
                         <a href="{{route('equipamentos.edit', $e->id)}}">
                             <button class="btn btn-primary">Editar</button>
                         </a>
-                        <a href="">
+                        <a href="{{route('equipamentos.destroy', $e->id)}}" class="del">
                             <button class="btn btn-danger">Deletar</button>
                         </a>
                     </td>

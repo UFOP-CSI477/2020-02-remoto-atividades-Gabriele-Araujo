@@ -97,6 +97,7 @@ class BancoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $del=$this->objEquipamento->destroy($id);
+        return($del)?"sim":"não";
     }
 }
