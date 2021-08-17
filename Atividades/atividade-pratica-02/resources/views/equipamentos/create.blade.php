@@ -9,7 +9,7 @@
             @csrf
             <div class="form-group">
                 <label for="nome">Nome</label>
-                <input type="text" class="form-control" name="nome" id="nome">
+                <input type="text" class="form-control" name="name" id="name">
                 
                 <input type="submit" value="Cadastrar" class="btn btn-primary mt-3 mb-4">
                 <input type="reset" value="Limpar" class="btn btn-danger mt-3 mb-4">

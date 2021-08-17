@@ -46,9 +46,10 @@ class BancoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Equipamentos::create($request->all());
+        session()->flash('mensagem', 'Estado cadastrado com sucesso!');
+        return redirect()->route('equipamentos.index');
     }
-
     /**
      * Display the specified resource.
      *
