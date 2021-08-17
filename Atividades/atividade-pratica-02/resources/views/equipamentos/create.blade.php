@@ -24,6 +24,7 @@
                 <input type="reset" value="Limpar" class="btn btn-danger mt-3 mb-4">
             </div>
         </form>
+
     </div>
 
 @endsection

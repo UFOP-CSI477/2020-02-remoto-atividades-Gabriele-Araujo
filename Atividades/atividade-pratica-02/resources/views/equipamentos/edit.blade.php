@@ -2,21 +2,26 @@
 
 @section('content')
 
-<form action="{{url('equipamentos')}}" method="post">
-    <h1 class="text-center">@if(isset($equipamentos))Editar @else Cadastrar @endif</h1>
-    @csrf
-    @method('PUT')
+<h1 class="text-center">Editar</h1>
 
-    <form name="formCad" id="formCad" method="post" action="{{url('equipamentos')}}">
-        <div class="form-group">
-            <label for="nome">Nome</label>
-            <input type="text" class="form-control" name="name" id="name" required>
-                
-            <input type="submit" value="Atualizar" class="btn btn-primary mt-3 mb-4">
-            <input type="reset" value="Limpar" class="btn btn-danger mt-3 mb-4">
-        </div>
-    </form>
+    <div class="col-8 m-auto">
 
-</form>
+        <form action="{{ route('equipamentos.update', $equipamento->id)}}" method="post">
 
+            @csrf
+            @method('PUT')
+
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" class="form-control" name="name" id="name" value="{{$equipamento->name ?? ''}}">
+            </div>
+
+            <div class="text-right">
+                <input type="submit" value="Editar" class="btn btn-primary mt-3 mb-4">
+                <input type="reset" value="Limpar" class="btn btn-danger mt-3 mb-4">
+            </div>
+
+        </form>
+
+    </div>
 @endsection

@@ -77,12 +77,16 @@ class BancoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Equipamentos  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(BancoRequest $request, $id)
+    public function update(BancoRequest $request, Equipamentos $equipamento)
     {
-        //
+        $equipamento->fill($request->all());
+        $equipamento->save();
+
+        session()->flash('mensagem', 'Equipamento atualizado com sucesso!');
+        return redirect()->route('equipamentos.index');
     }
 
     /**
