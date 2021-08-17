@@ -27,7 +27,7 @@
                         <a href="{{route('equipamentos.show', $e->id)}}">
                             <button class="btn btn-dark">Visualizar</button>
                         </a>
-                        <a href="">
+                        <a href="{{route('equipamentos.edit', $e->id)}}">
                             <button class="btn btn-primary">Editar</button>
                         </a>
                         <a href="">

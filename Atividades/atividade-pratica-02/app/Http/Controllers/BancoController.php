@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Requests;
 use App\Models\Equipamentos;
 use App\Models\User;
+use App\Http\Requests\BancoRequest;
 
 class BancoController extends Controller
 {
@@ -44,7 +45,7 @@ class BancoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BancoRequest $request)
     {
         Equipamentos::create($request->all());
         session()->flash('mensagem', 'Estado cadastrado com sucesso!');
@@ -67,9 +68,9 @@ class BancoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Equipamentos $equipamento)
     {
-        //
+        return view('equipamentos.edit', ['equipamento'=>$equipamento]);
     }
 
     /**
@@ -79,7 +80,7 @@ class BancoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BancoRequest $request, $id)
     {
         //
     }
