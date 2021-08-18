@@ -25,7 +25,7 @@ class Controller extends BaseController
     }
 
     public function banco(){
-        //return view('banco');
+        return view('banco');
     }
 
     public function usuario(){

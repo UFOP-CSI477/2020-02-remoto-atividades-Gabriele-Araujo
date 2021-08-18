@@ -101,41 +101,46 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-title">Notifications</h5>
-                <p class="card-category">Handcrafted by our friend <a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a></p>
+                <h5 class="card-title">Meu Banco</h5>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="card card-plain">
                       <div class="card-header">
-                        <h5 class="card-title">Notifications Style</h5>
+                        <h5 class="card-title">Rendimentos totais</h5>
                       </div>
+                      
                       <div class="card-body">
-                        <div class="alert alert-info">
-                          <span>This is a plain notification</span>
-                        </div>
-                        <div class="alert alert-info alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span>This is a notification with close button.</span>
-                        </div>
-                        <div class="alert alert-info alert-with-icon alert-dismissible fade show" data-notify="container">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span data-notify="icon" class="nc-icon nc-bell-55"></span>
-                          <span data-notify="message">This is a notification with close button and icon.</span>
-                        </div>
-                        <div class="alert alert-info alert-with-icon alert-dismissible fade show" data-notify="container">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span data-notify="icon" class="nc-icon nc-chart-pie-36"></span>
-                          <span data-notify="message">This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
-                        </div>
+                        @csrf
+                        <table class="table">
+
+                          <thead class="text-primary">
+                            <th class="text-center">Data</th>
+                            <th class="text-center">Nome</th>
+                            <th class="text-center">Valor</th>
+                            <th class="text-center"></th>
+                          </thead>
+
+                          <tbody>
+                          @foreach($financa as $f)
+                            <tr>
+                              <td class="text-center">{{ $f->data }}</td>
+                              <td class="text-center">{{ $f->name }}</td>
+                              <td class="text-center">R${{ $f->valor }}</td>
+
+                              <td class="text-center">
+                                <a href="{{route('financas.destroy', $f->id)}}" class="del">
+                                  <button class="btn btn-danger">Deletar</button>
+                                </a> 
+                              </td>
+                            </tr>
+                          @endforeach
+                          </tbody>
+                        </table>
+
                       </div>
+
                     </div>
                   </div>
                   <div class="col-md-6">
