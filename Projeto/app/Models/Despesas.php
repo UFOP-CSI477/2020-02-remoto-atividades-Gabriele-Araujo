@@ -10,4 +10,5 @@ class Despesas extends Model
     public $timestamps = false; 
     use HasFactory;
     protected $table='despesas';
+    protected $fillable=['name','descricao','data','valor'];
 }

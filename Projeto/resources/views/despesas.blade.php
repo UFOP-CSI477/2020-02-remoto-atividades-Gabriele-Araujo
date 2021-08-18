@@ -106,15 +106,15 @@
 
 
               <div class="card-body">
-                
+                  @csrf
                   <table class="table">
 
                     <thead class=" text-primary">
-                      <th class="text-center">Data</th>
                       <th class="text-center">Nome</th>
                       <th class="text-center">Descrição</th>
+                      <th class="text-center">Data</th>
                       <th class="text-center">Valor</th>
-                      <th class="text-center">Ação</th>
+                      <th class="text-center"></th>
                     </thead>
 
                     <tbody>
@@ -123,7 +123,7 @@
                           <td class="text-center">{{ $d->name }}</td>
                           <td class="text-center">{{ $d->descricao }}</td>
                           <td class="text-center">{{ $d->data }}</td>
-                          <td class="text-center">{{ $d->valor }}</td>
+                          <td class="text-center">R${{ $d->valor }}</td>
 
                           <td class="text-center">
                             <a href="{{route('despesas.edit', $d->id)}}">
@@ -147,7 +147,7 @@
       <div class="content">
         <div class="text-center">
           <a href="{{route('despesas.create')}}">
-              <button class="btn btn-success">Cadastrar</button>
+              <button class="btn btn-success">Inserir</button>
           </a>
         </div>
       </div>

@@ -50,7 +50,9 @@ class DespesasController extends Controller
      */
     public function store(DespesasRequest $request)
     {
-        
+        Despesas::create($request->all());
+        session()->flash('mensagem', 'Despesa cadastrada com sucesso!');
+        return redirect()->route('despesas.index');
     }
 
     /**
@@ -73,7 +75,6 @@ class DespesasController extends Controller
     public function edit(Despesas $despesa)
     {
         return view('despesas.edit', ['despesa'=>$despesa]);
-        return redirect()->route('despesas');
     }
 
     /**
@@ -85,7 +86,11 @@ class DespesasController extends Controller
      */
     public function update(DespesasRequest $request, Despesas $despesa)
     {
-       
+        $despesa->fill($request->all());
+        $despesa->save();
+
+        session()->flash('mensagem', 'Despesa atualizada com sucesso!');
+        return redirect()->route('despesas.index');
     }
 
     /**
@@ -96,6 +101,7 @@ class DespesasController extends Controller
      */
     public function destroy($id)
     {
-        
+        $del=$this->objDespesas->destroy($id);
+        return($del)?"sim":"não";
     }
 }
