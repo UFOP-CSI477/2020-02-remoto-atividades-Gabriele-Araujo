@@ -39,7 +39,7 @@ class DespesasController extends Controller
      */
     public function create()
     {
-        //
+        return view('despesas.create');
     }
 
     /**
@@ -72,7 +72,7 @@ class DespesasController extends Controller
      */
     public function edit(Despesas $despesa)
     {
-        return view('despesas.edit');
+        return view('despesas.edit', ['despesa'=>$despesa]);
     }
 
     /**

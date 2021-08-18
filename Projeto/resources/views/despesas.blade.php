@@ -103,6 +103,8 @@
               <div class="card-header">
                 <h4 class="card-title">Minhas despesas</h4>
               </div>
+
+              
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
@@ -111,7 +113,7 @@
                       <th class="text-center">Data</th>
                       <th class="text-center">Nome</th>
                       <th class="text-center">Descrição</th>
-                      <th class="text-right">Valor</th>
+                      <th class="text-center">Valor</th>
                       <th class="text-center">Ação</th>
                     </thead>
 
@@ -121,7 +123,7 @@
                           <td class="text-center">{{ $d->name }}</td>
                           <td class="text-center">{{ $d->descricao }}</td>
                           <td class="text-center">{{ $d->data }}</td>
-                          <td class="text-right">{{ $d->valor }}</td>
+                          <td class="text-center">{{ $d->valor }}</td>
 
                           <td class="text-center">
                             <a href="{{route('despesas.edit', $d->id)}}">
