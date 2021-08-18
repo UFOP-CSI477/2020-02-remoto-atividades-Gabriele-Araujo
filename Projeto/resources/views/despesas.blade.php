@@ -104,9 +104,9 @@
                 <h4 class="card-title">Minhas despesas</h4>
               </div>
 
-              
+
               <div class="card-body">
-                <div class="table-responsive">
+                
                   <table class="table">
 
                     <thead class=" text-primary">
@@ -139,14 +139,17 @@
                     </tbody>
 
                   </table>
-                  
-                  <div>
-                     
-                  </div>
-                  
-                </div>
               </div>
             </div>
           </div>
       </div>
+      
+      <div class="content">
+        <div class="text-center">
+          <a href="{{route('despesas.create')}}">
+              <button class="btn btn-success">Cadastrar</button>
+          </a>
+        </div>
+      </div>
+
 @endsection

@@ -73,6 +73,7 @@ class DespesasController extends Controller
     public function edit(Despesas $despesa)
     {
         return view('despesas.edit', ['despesa'=>$despesa]);
+        return redirect()->route('despesas');
     }
 
     /**

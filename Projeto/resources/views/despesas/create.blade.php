@@ -44,7 +44,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Cadastro despesa</a>
+            <a class="navbar-brand" href="javascript:;">Cadastro de despesa</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -104,7 +104,7 @@
               <div class="card-header">
               </div>
               <div class="card-body">
-                <div class="table-responsive">
+                
                     <form name="formCad" id="formCad" method="post" action="{{url('despesas')}}">
                         @csrf
                         <div class="form-group">
@@ -119,13 +119,17 @@
 
                             <label for="valor">Valor</label>
                             <input type="float" class="form-control" name="valor" id="valor" required>
-
-                            <input type="submit" value="Cadastrar" class="btn btn-primary mt-3 mb-4">
-                            <input type="reset" value="Limpar" class="btn btn-danger mt-3 mb-4">
+                            
+                            <div class="text-center">
+                              <input type="submit" value="Cadastrar" class="btn btn-primary mt-3 mb-4">
+                              <input type="reset" value="Limpar" class="btn btn-danger mt-3 mb-4">
+                            </div>
+                            
                         </div>
                     </form>
-                </div>
+                
             </div>
+
         </div>
     </div>
 </div>

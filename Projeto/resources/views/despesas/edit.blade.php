@@ -101,7 +101,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Cadastro de despesas</h4>
+                <h4 class="card-title"></h4>
               </div>
 
               
@@ -134,8 +134,6 @@
                             <input type="reset" value="Limpar" class="btn btn-danger mt-3 mb-4">
                         </div>
                     </form>
-                    
-
                 </div>
               </div>
             </div>
