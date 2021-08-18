@@ -14,7 +14,10 @@ class CreateFinancasTable extends Migration
     public function up()
     {
         Schema::create('financas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id')->key;
+            $table->string('name');
+            $table->date('data');
+            $table->decimal('valor');
             $table->timestamps();
         });
     }

@@ -130,9 +130,7 @@
                               <td class="text-center">R${{ $f->valor }}</td>
 
                               <td class="text-center">
-                                <a href="{{route('financas.destroy', $f->id)}}" class="del">
-                                  <button class="btn btn-danger">Deletar</button>
-                                </a> 
+                                
                               </td>
                             </tr>
                           @endforeach
