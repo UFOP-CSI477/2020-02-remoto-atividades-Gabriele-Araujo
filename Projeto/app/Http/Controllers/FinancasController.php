@@ -24,7 +24,8 @@ class FinancasController extends Controller
 
     public function saldo(){
         $financa = Financas::get()->sum('valor');
-        return view('banco', ['financa'=>$financa]);
+        dd($financa);
+        //return view('banco', ['financa'=>$financa]);
     }
 
     /**
