@@ -16,7 +16,7 @@
             </a>
           </li>
           <li class="active">
-            <a href="{{url('banco')}}">
+            <a href="{{url('financas')}}">
               <i class="nc-icon nc-bank"></i>
               <p>Banco</p>
             </a>
@@ -105,7 +105,7 @@
               </div>
               <div class="card-body">
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-8">
                     <div class="card card-plain">
                       <div class="card-header">
                         <h5 class="card-title">Rendimentos totais</h5>
@@ -130,7 +130,9 @@
                               <td class="text-center">R${{ $f->valor }}</td>
 
                               <td class="text-center">
-                                
+                                <a href="{{route('financas.destroy', $f->id)}}" class="delF">
+                                  <button class="btn btn-danger">Deletar</button>
+                                </a>
                               </td>
                             </tr>
                           @endforeach
@@ -141,97 +143,34 @@
 
                     </div>
                   </div>
-                  <div class="col-md-6">
+
+                  <div class="col-md-4">
                     <div class="card card-plain">
                       <div class="card-header">
-                        <h5 class="card-title">Notification states</h5>
+                        <h5 class="card-title">Lucro total</h5>
                       </div>
                       <div class="card-body">
-                        <div class="alert alert-primary alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span><b> Primary - </b> This is a regular notification made with ".alert-primary"</span>
-                        </div>
-                        <div class="alert alert-info alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span><b> Info - </b> This is a regular notification made with ".alert-info"</span>
-                        </div>
-                        <div class="alert alert-success alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span><b> Success - </b> This is a regular notification made with ".alert-success"</span>
-                        </div>
-                        <div class="alert alert-warning alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span><b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
-                        </div>
-                        <div class="alert alert-danger alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span><b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
-                        </div>
+                        
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-body">
-                <div class="places-buttons">
-                  <div class="row">
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                      <h4 class="card-title">
-                        Notifications Places
-                        <p class="category">Click to view notifications</p>
-                      </h4>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-8 ml-auto mr-auto">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','left')">Top Left</button>
-                        </div>
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','center')">Top Center</button>
-                        </div>
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','right')">Top Right</button>
-                        </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                      <div class="text-center">
+                        <a href="{{route('financas.create')}}">
+                            <button class="btn btn-success">Inserir</button>
+                        </a>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-8 ml-auto mr-auto">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','left')">Bottom Left</button>
-                        </div>
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','center')">Bottom Center</button>
-                        </div>
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','right')">Bottom Right</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
+        
       </div>
+      
 @endsection

@@ -105,17 +105,15 @@
               </div>
               <div class="card-body">
                 
-                    <form name="formCad" id="formCad" method="post" action="{{url('despesas')}}">
+                    <form name="formCad" id="formCad" method="post" action="{{url('financas')}}">
                         @csrf
                         <div class="form-group">
-                            <label for="nome">Nome</label>
-                            <input type="text" class="form-control" name="name" id="name" required>
-                            
-                            <label for="descricao">Descrição</label>
-                            <input type="text" class="form-control" name="descricao" id="descricao" required>
 
                             <label for="data">Data</label>
                             <input type="date" class="form-control" name="data" id="data" required>
+                            
+                            <label for="nome">Nome</label>
+                            <input type="text" class="form-control" name="name" id="name" required>
 
                             <label for="valor">Valor</label>
                             <input type="float" class="form-control" name="valor" id="valor" required>

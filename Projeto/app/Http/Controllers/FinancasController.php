@@ -8,6 +8,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use App\Models\Financas;
 
+use App\Http\Requests\FinancasRequest;
+
 class FinancasController extends Controller
 {
 
@@ -101,7 +103,7 @@ class FinancasController extends Controller
      */
     public function destroy($id)
     {
-        $del=$this->objFinancas->destroy($id);
-        return($del)?"sim":"não";
+        $delF=$this->objFinancas->destroy($id);
+        return($delF)?"sim":"não";
     }
 }

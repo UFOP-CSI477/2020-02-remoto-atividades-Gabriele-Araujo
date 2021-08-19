@@ -16,7 +16,7 @@
             </a>
           </li>
           <li>
-            <a href="{{url('banco')}}">
+            <a href="{{url('financas')}}">
               <i class="nc-icon nc-bank"></i>
               <p>Banco</p>
             </a>

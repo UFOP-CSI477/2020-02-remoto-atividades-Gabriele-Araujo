@@ -67,6 +67,7 @@ Coded by www.creative-tim.com
   </div>
 
   <script src="{{ asset('assets/js/javascript.js') }}"></script>
+  <script src="{{ asset('assets/js/javascriptBanco.js') }}"></script>
 
   <!--   Core JS Files   -->
   <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
