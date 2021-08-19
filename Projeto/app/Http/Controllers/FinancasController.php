@@ -22,6 +22,10 @@ class FinancasController extends Controller
         $this->objFinancas=new Financas();
     }
 
+    public function saldo(){
+        $financa = Financas::get()->sum('valor');
+        return view('banco', ['financa'=>$financa]);
+    }
 
     /**
      * Display a listing of the resource.
@@ -106,4 +110,7 @@ class FinancasController extends Controller
         $delF=$this->objFinancas->destroy($id);
         return($delF)?"sim":"não";
     }
+
+    
+
 }

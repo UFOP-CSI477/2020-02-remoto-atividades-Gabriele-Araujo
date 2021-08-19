@@ -150,7 +150,10 @@
                         <h5 class="card-title">Lucro total</h5>
                       </div>
                       <div class="card-body">
-                        
+                        <th class="text=center">Lucro</th>
+                        @foreach($financa as $f)
+                          <td class="text-center">{{$f}}</td>
+                        @endforeach
                       </div>
                     </div>
                   </div>
