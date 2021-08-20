@@ -110,7 +110,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Rendimentos</p>
-                      <p class="card-title">R$3.600,00<p>
+                      <p class="card-title">R${{$rendimento}}<p>
                     </div>
                   </div>
                 </div>
@@ -136,7 +136,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                         <p class="card-category">Despesas</p>
-                        <p class="card-title">$2.450,00<p>
+                        <p class="card-title">R${{$despesa}}<p>
                     </div>
                   </div>
                 </div>
@@ -145,7 +145,7 @@
                 <hr>
                 <div class="stats">
                   <i class="fa fa-clock-o"></i>
-                  Este mês
+                  <a href="{{url('painel')}}" class="card-category">Atualizar</a>
                 </div>
               </div>
             </div>
@@ -162,7 +162,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                         <p class="card-category">Lucro total</p>
-                        <p class="card-title">R$1.150,00<p>
+                        <p class="card-title">R${{$rendimento-$despesa}}<p>
                     </div>
                   </div>
                 </div>
@@ -171,7 +171,7 @@
                 <hr>
                 <div class="stats">
                   <i class="fa fa-calendar-o"></i>
-                  Últimos 30 dias
+                  <a href="{{url('painel')}}" class="card-category">Atualizar</a>
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\Controller@login');
-Route::get('/painel', 'App\Http\Controllers\Controller@painel');
+Route::get('/painel', 'App\Http\Controllers\PainelController@index');
 Route::resource('/despesas', App\Http\Controllers\DespesasController::class);
 Route::resource('/financas', App\Http\Controllers\FinancasController::class);
 Route::get('/usuario', 'App\Http\Controllers\Controller@usuario');

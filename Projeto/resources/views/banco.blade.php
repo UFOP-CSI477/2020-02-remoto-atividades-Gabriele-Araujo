@@ -105,11 +105,8 @@
               </div>
               <div class="card-body">
                 <div class="row">
-                  <div class="col-md-8">
+                  <div class="col-md-12">
                     <div class="card card-plain">
-                      <div class="card-header">
-                        <h5 class="card-title">Rendimentos totais</h5>
-                      </div>
                       
                       <div class="card-body">
                         @csrf
@@ -143,32 +140,16 @@
 
                     </div>
                   </div>
-
-                  <div class="col-md-4">
-                    <div class="card card-plain">
-                      <div class="card-header">
-                        <h5 class="card-title">Lucro total</h5>
-                      </div>
-                      <div class="card-body">
-                        <th class="text=center">Lucro</th>
-                        @foreach($financa as $f)
-                          <td class="text-center">{{$f}}</td>
-                        @endforeach
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-8">
+                <div class="content">
                       <div class="text-center">
                         <a href="{{route('financas.create')}}">
                             <button class="btn btn-success">Inserir</button>
                         </a>
                       </div>
-                    </div>
                 </div>
-
+                
               </div>
             </div>
           </div>

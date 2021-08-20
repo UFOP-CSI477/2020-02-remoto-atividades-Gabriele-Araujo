@@ -38,31 +38,18 @@ Coded by www.creative-tim.com
   <div class="wrapper ">
   <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
-        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+        <a href="{{url('painel')}}" class="simple-text logo-mini">
           <div class="logo-image-small">
             <img src="{{ asset('assets/img/moeda.png') }}">
           </div>
         </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="{{url('painel')}}" class="simple-text logo-normal">
             Minhas Finanças
         </a>
       </div>
 
       @yield('content')
 
-      <footer class="footer footer-black  footer-white ">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="credits ml-auto">
-              <span class="copyright">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>, by Creative Tim
-              </span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   </div>
 
