@@ -119,7 +119,7 @@
                             <input type="float" class="form-control" name="valor" id="valor" required>
                             
                             <div class="text-center">
-                              <input type="submit" value="Cadastrar" class="btn btn-primary mt-3 mb-4">
+                              <input type="submit" value="Inserir" class="btn btn-primary mt-3 mb-4">
                               <input type="reset" value="Limpar" class="btn btn-danger mt-3 mb-4">
                             </div>
                             

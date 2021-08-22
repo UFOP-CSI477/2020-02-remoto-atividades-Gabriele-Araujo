@@ -16,18 +16,6 @@ class Controller extends BaseController
         //return view('login');
     }
 
-    public function painel(){
-        return view('painel');
-    }
-
-    public function despesas(){
-        return view('despesas');
-    }
-
-    public function banco(){
-        return view('banco');
-    }
-
     public function usuario(){
         //return view('usuario');
     }
