@@ -15,12 +15,16 @@ class CreateRegistrosTable extends Migration
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->increments('id')->key;
-            $table->foreign('pessoa_id')->references('id')->on('pessoas');
-            $table->foreign('unidade_id')->references('id')->on('unidades');
-            $table->foreign('vacina_id')->references('id')->on('vacinas');
+            $table->integer('pessoa_id')->unsigned();
+            $table->integer('unidade_id')->unsigned();
+            $table->integer('vacina_id')->unsigned();
             $table->integer('dose');
             $table->date('data');
             $table->timestamps();
+
+            $table->foreign('pessoa_id')->references('id')->on('pessoas');
+            $table->foreign('unidade_id')->references('id')->on('unidades');
+            $table->foreign('vacina_id')->references('id')->on('vacinas');
         });
     }
 
