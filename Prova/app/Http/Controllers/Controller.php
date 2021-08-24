@@ -11,7 +11,15 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index(){
-        return view('welcome');
+    public function inicial(){
+        return view('inicial');
+    }
+
+    public function geral(){
+        return view('geral');
+    }
+
+    public function administrativo(){
+        return view('administrativo');
     }
 }

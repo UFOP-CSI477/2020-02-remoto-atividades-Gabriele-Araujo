@@ -9,13 +9,33 @@
             </a>
           </li>
           <li>
-            <a href="{{url('despesas')}}">
+            <a href="{{url('geral')}}">
               <p>Área Geral</p>
             </a>
           </li>
           <li>
-            <a href="{{url('financas')}}">
+            <a href="{{url('administrativo')}}">
               <p>Área Administrativa</p>
+            </a>
+          </li>
+          <li>
+            <a href="{{url('pessoas')}}">
+              <p>Pessoas</p>
+            </a>
+          </li>
+          <li>
+            <a href="{{url('unidades')}}">
+              <p>Unidades</p>
+            </a>
+          </li>
+          <li>
+            <a href="{{url('vacinas')}}">
+              <p>Vacinas</p>
+            </a>
+          </li>
+          <li>
+            <a href="{{url('registros')}}">
+              <p>Registros</p>
             </a>
           </li>
         </ul>
