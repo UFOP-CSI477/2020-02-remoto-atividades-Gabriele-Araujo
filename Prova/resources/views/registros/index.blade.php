@@ -53,6 +53,7 @@
                       <th class="text-center">Vacina</th>
                       <th class="text-center">Dose</th>
                       <th class="text-center">Data</th>
+                      <th class="text-center"></th>
                     </thead>
 
                     <tbody>
@@ -67,10 +68,10 @@
                           <td class="text-center">{{ $r->data }}</td>
                           <td class="text-center">
                             <a href="{{route('registros.edit', $r->id)}}">
-                                <button class="btn btn-success">Editar</button>
+                                <button class="btn btn-primary">Editar</button>
                             </a>
                             <a href="{{route('registros.destroy', $r->id)}}" class="delReg">
-                                <button class="btn btn-success">Deletar</button>
+                                <button class="btn btn-danger">Deletar</button>
                             </a> 
                           </td>
                         </tr>

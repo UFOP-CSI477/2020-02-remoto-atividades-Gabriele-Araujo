@@ -31,7 +31,7 @@ class RegistrosController extends Controller
     public function index()
     {
         $registro = Registros::orderBy('id')->get();
-        return view('registros.index', ['registro', $registro]);
+        return view('registros.index', ['registro'=> $registro]);
     }
 
     /**
@@ -41,8 +41,11 @@ class RegistrosController extends Controller
      */
     public function create()
     {
-        $registro = Registros::get();
-        return view('registros.create', ['registro', $registro]);
+        $pessoa = Pessoas::orderBy('id')->get();
+        $unidade = Unidades::orderBy('id')->get();
+        $vacina = Vacinas::orderBy('id')->get();
+
+        return view('registros.create', ['pessoa'=> $pessoa, 'unidade'=> $unidade, 'vacina'=> $vacina]);
     }
 
     /**
@@ -77,7 +80,10 @@ class RegistrosController extends Controller
      */
     public function edit(Registros $registro)
     {
-        return view('registros.edit', ['registro'=>$registro]);
+        $pessoa = Pessoas::orderBy('id')->get();
+        $unidade = Unidades::orderBy('id')->get();
+        $vacina = Vacinas::orderBy('id')->get();
+        return view('registros.edit', ['registro'=>$registro, 'pessoa'=>$pessoa, 'unidade'=>$unidade, 'vacina'=>$vacina]);
     }
 
     /**

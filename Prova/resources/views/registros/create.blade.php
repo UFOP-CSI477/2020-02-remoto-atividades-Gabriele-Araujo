@@ -18,26 +18,6 @@
               <p>Área Administrativa</p>
             </a>
           </li>
-          <li>
-            <a href="{{url('pessoas')}}">
-              <p>Pessoas</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{url('unidades')}}">
-              <p>Unidades</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{url('vacinas')}}">
-              <p>Vacinas</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{url('registros')}}">
-              <p>Registros</p>
-            </a>
-          </li>
         </ul>
       </div>
     </div>
@@ -70,24 +50,24 @@
                     <label for="pessoa_id">Pessoa</label>
                     <select class="form-control" name="pessoa_id" id="pessoa_id" required>
                         <option value="">Selecione</option>
-                        @foreach($registro as $r)
-                            <option value="{{$r->pessoa->id}}">{{$r->pessoa->nome}}</option>
+                        @foreach($pessoa as $p)
+                            <option value="{{$p->id}}">{{$p->nome}}</option>
                         @endforeach
                     </select>
                             
                     <label for="unidade_id">Unidade</label>
                     <select class="form-control" name="unidade_id" id="unidade_id" required>
                         <option value="">Selecione</option>
-                        @foreach($registro as $r)
-                            <option value="{{$r->unidade->id}}">{{$r->unidade->nome}}</option>
+                        @foreach($unidade as $u)
+                            <option value="{{$u->id}}">{{$u->nome}}</option>
                         @endforeach
                     </select>
 
                     <label for="vacina_id">Vacina</label>
                     <select class="form-control" name="vacina_id" id="vacina_id" required>
                         <option value="">Selecione</option>
-                        @foreach($registro as $r)
-                            <option value="{{$r->vacina->id}}">{{$r->vacina->nome}}</option>
+                        @foreach($vacina as $v)
+                            <option value="{{$v->id}}">{{$v->nome}}</option>
                         @endforeach
                     </select>
 

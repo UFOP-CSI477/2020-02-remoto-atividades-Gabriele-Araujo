@@ -19,10 +19,32 @@ class VacinasFactory extends Factory
      *
      * @return array
      */
+
+    
+    
+
     public function definition()
     {
+        $nome = $this->faker->randomElement(['CoronaVac', 'AstraZeneca', 'Pfizer', 'Janssen']);
+
+        if($nome == 'CoronaVac'){
+            $fabricante = 'Sinovac';
+            $doses = 2;
+        } else if($nome == 'AstraZeneca'){
+            $fabricante = 'Universidade de Oxford';
+            $doses = 2;
+        } else if($nome == 'Janssen'){
+            $fabricante = 'Janssen';
+            $doses = 1;
+        } else {
+            $fabricante = 'Pfizer';
+            $doses = 2;
+        }
+    
         return [
-            'nome' => $this->faker->randomElement(['CoronaVac', 'AstraZeneca', 'Pfizer', 'Janssen', 'Sputnik V'])
+            'nome' => $nome,
+            'fabricante' => $fabricante,
+            'doses' => $doses
         ];
     }
 }
