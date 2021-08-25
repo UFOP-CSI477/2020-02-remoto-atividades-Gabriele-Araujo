@@ -41,10 +41,8 @@ class RegistrosController extends Controller
      */
     public function create()
     {
-        $pessoa = Pessoas::get();
-        $unidade = Unidades::get();
-        $vacina = Vacinas::get();
-        return view('registros.create', ['pessoa'=>$pessoa], ['unidade'=>$unidade], ['vacina'=>$vacina]);
+        $registro = Registros::get();
+        return view('registros.create', ['registro', $registro]);
     }
 
     /**

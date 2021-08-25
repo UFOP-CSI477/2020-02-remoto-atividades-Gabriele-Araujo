@@ -22,7 +22,11 @@ class RegistrosFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'pessoa_id' => Pessoas::factory(),
+            'unidade_id' => Unidades::factory(),
+            'vacina_id' => Vacinas::factory(),
+            'doses' => $this->faker->randomElement(['1', '2']),
+            'data' => $this->faker->date
         ];
     }
 }

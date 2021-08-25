@@ -70,29 +70,29 @@
                     <label for="pessoa_id">Pessoa</label>
                     <select class="form-control" name="pessoa_id" id="pessoa_id" required>
                         <option value="">Selecione</option>
-                        @foreach($pessoa as $p)
-                            <option value="{{$p->id}}">{{$p->nome}}</option>
+                        @foreach($registro as $r)
+                            <option value="{{$r->pessoa->id}}">{{$r->pessoa->nome}}</option>
                         @endforeach
                     </select>
                             
                     <label for="unidade_id">Unidade</label>
-                    <select class="form-control" name="usuario_id" id="usuario_id" required>
+                    <select class="form-control" name="unidade_id" id="unidade_id" required>
                         <option value="">Selecione</option>
-                        @foreach($unidade as $u)
-                            <option value="{{$u->id}}">{{$u->nome}}</option>
+                        @foreach($registro as $r)
+                            <option value="{{$r->unidade->id}}">{{$r->unidade->nome}}</option>
                         @endforeach
                     </select>
 
                     <label for="vacina_id">Vacina</label>
                     <select class="form-control" name="vacina_id" id="vacina_id" required>
                         <option value="">Selecione</option>
-                        @foreach($vacina as $v)
-                            <option value="{{$v->id}}">{{$v->nome}}</option>
+                        @foreach($registro as $r)
+                            <option value="{{$r->vacina->id}}">{{$r->vacina->nome}}</option>
                         @endforeach
                     </select>
 
-                    <label for="doses">Doses</label>
-                    <input type="number" class="form-control" name="doses" id="doses" required>
+                    <label for="dose">Doses</label>
+                    <input type="number" class="form-control" name="dose" id="dose" required>
 
                     <label for="data">Data</label>
                     <input type="date" class="form-control" name="data" id="data" required>

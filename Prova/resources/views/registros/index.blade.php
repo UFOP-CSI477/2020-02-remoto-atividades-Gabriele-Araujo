@@ -60,9 +60,9 @@
                     @foreach($registro as $r)
                         <tr>
                           <td class="text-center">{{ $r->id }}</td>
-                          <td class="text-center">{{ $r->pessoa_id }}</td>
-                          <td class="text-center">{{ $r->unidade_id }}</td>
-                          <td class="text-center">{{ $r->vacina_id }}</td>
+                          <td class="text-center">{{ $r->pessoa->nome }}</td>
+                          <td class="text-center">{{ $r->unidade->nome }}</td>
+                          <td class="text-center">{{ $r->vacina->nome }}</td>
                           <td class="text-center">{{ $r->dose }}</td>
                           <td class="text-center">{{ $r->data }}</td>
                           <td class="text-center">
