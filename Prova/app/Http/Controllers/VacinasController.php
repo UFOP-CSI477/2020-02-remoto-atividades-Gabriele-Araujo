@@ -1,11 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Vacinas;
 use Illuminate\Http\Request;
+use App\Http\Requests\VacinasRequest;
 
 class VacinasController extends Controller
 {
+    private $objVacinas;
+
+    public function __construct()
+    {
+        $this->objVacinas = new Vacinas();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,8 @@ class VacinasController extends Controller
      */
     public function index()
     {
-        return view('vacinas');
+        $vacinas = Vacinas::orderBy('nome')->get();
+        return view('vacinas', ['vacinas'=>$vacinas]);
     }
 
     /**
@@ -23,7 +32,7 @@ class VacinasController extends Controller
      */
     public function create()
     {
-        //
+        return view('vacinas.create');
     }
 
     /**
@@ -32,9 +41,11 @@ class VacinasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VacinasRequest $request)
     {
-        //
+        Vacinas::create($request->all());
+        session()->flash('mensagem', 'Vacina cadastrada com sucesso!');
+        return redirect()->route('vacinas.index');
     }
 
     /**

@@ -1,10 +1,10 @@
 @extends('templates.template')
 
 @section('content')
-      <div class="sidebar-wrapper">
+    <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active">
-            <a href="{{url('painel')}}">
+            <a href="{{url('')}}">
               <p>Página Inicial</p>
             </a>
           </li>
@@ -16,26 +16,6 @@
           <li>
             <a href="{{url('administrativo')}}">
               <p>Área Administrativa</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{url('pessoas')}}">
-              <p>Pessoas</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{url('unidades')}}">
-              <p>Unidades</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{url('vacinas')}}">
-              <p>Vacinas</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{url('registros')}}">
-              <p>Registros</p>
             </a>
           </li>
         </ul>

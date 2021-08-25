@@ -19,4 +19,4 @@ Route::get('/administrativo', 'App\Http\Controllers\Controller@administrativo');
 Route::get('/pessoas', 'App\Http\Controllers\PessoasController@index');
 Route::get('/registros', 'App\Http\Controllers\RegistrosController@index');
 Route::get('/unidades', 'App\Http\Controllers\UnidadesController@index');
-Route::get('/vacinas', 'App\Http\Controllers\VacinasController@index');
+Route::resource('/vacinas', App\Http\Controllers\VacinasController::class);
