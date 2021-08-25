@@ -63,7 +63,7 @@
                           <td class="text-center">{{ $u->cidade }}</td>
                           <td class="text-center">
                             <a href="{{route('unidades.destroy', $u->id)}}" class="delUni">
-                                <button class="btn btn-success">Deletar</button>
+                                <button class="btn btn-danger">Deletar</button>
                             </a> 
                           </td>
                         </tr>

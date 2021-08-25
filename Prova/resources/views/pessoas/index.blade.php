@@ -65,7 +65,7 @@
                           <td class="text-center">{{ $p->data_nascimento }}</td>
                           <td class="text-center">
                             <a href="{{route('pessoas.edit', $p->id)}}">
-                                <button class="btn btn-success">Editar</button>
+                                <button class="btn btn-primary">Editar</button>
                             </a> 
                           </td>
                         </tr>

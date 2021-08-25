@@ -93,12 +93,12 @@ class RegistrosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(RegistroRequest $request, Registros $registro)
+    public function update(RegistrosRequest $request, Registros $registro)
     {
         $registro->fill($request->all());
         $registro->save();
 
-        session()->flash('mensagem', 'Registro atualizada com sucesso!');
+        session()->flash('mensagem', 'Registro atualizado com sucesso!');
         return redirect()->route('registros.index');
     }
 

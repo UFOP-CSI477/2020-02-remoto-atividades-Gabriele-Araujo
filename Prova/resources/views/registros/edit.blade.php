@@ -44,7 +44,7 @@
         
         <div class="card-body">
                 
-            <form name="formCad" id="formCad" method="post" action="{{url('registros')}}">
+            <form name="formCad" id="formCad" method="post" action="{{route('registros.update', $registro->id)}}">
             @csrf
             @method('PUT')
             <div class="form-group">
