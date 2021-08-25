@@ -11,4 +11,8 @@ class Vacinas extends Model
     public $timestamps = false; 
     protected $table='vacinas';
     protected $fillable=['id', 'nome', 'fabricante', 'doses'];
+
+    public function registros(){
+        return $this->hasMany(Registros::class);
+    }
 }

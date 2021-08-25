@@ -11,4 +11,8 @@ class Pessoas extends Model
     public $timestamps = false; 
     protected $table='pessoas';
     protected $fillable=['id', 'nome', 'bairro', 'cidade', 'data_nascimento'];
+
+    public function registros(){
+        return $this->hasMany(Registros::class);
+    }
 }
