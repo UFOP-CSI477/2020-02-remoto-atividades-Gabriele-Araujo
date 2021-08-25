@@ -51,19 +51,21 @@
                       <th class="text-center">Nome</th>
                       <th class="text-center">Bairro</th>
                       <th class="text-center">Cidade</th>
+                      <th class="text-center">Data de Nascimento</th>
                     </thead>
 
                     <tbody>
                     
-                    @foreach($unidade as $u)
+                    @foreach($pessoa as $p)
                         <tr>
-                          <td class="text-center">{{ $u->id }}</td>
-                          <td class="text-center">{{ $u->nome }}</td>
-                          <td class="text-center">{{ $u->bairro }}</td>
-                          <td class="text-center">{{ $u->cidade }}</td>
+                          <td class="text-center">{{ $p->id }}</td>
+                          <td class="text-center">{{ $p->nome }}</td>
+                          <td class="text-center">{{ $p->bairro }}</td>
+                          <td class="text-center">{{ $p->cidade }}</td>
+                          <td class="text-center">{{ $p->data_nascimento }}</td>
                           <td class="text-center">
-                            <a href="{{route('unidades.destroy', $u->id)}}" class="delUni">
-                                <button class="btn btn-success">Deletar</button>
+                            <a href="{{route('pessoas.edit', $p->id)}}">
+                                <button class="btn btn-success">Editar</button>
                             </a> 
                           </td>
                         </tr>

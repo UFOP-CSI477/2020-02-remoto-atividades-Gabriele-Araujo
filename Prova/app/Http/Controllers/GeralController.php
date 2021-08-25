@@ -32,10 +32,10 @@ class GeralController extends Controller
         //$vacinasD = Vacinas::where($registros==='id')->get('dose');
         //$pessoas = Pessoas::where($vacinasID==='id');
         
-        $vacinas = Vacinas::get('nome');
-        $vacinasDose = Vacinas::where($vacinas==='nome')->sum('doses');
+        //$vacinas = Vacinas::get('nome');
+        //$vacinasDose = Vacinas::where($vacinas==='nome')->sum('doses');
         
-        return view('geral', ['vacinasDose'=>$vacinasDose], ['vacinas'=>$vacinas]);
+        return view('geral');
     }
 
     /**

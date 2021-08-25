@@ -13,7 +13,7 @@
             ajax.setRequestHeader('X-CSRF-TOKEN', token);
             ajax.onreadystatechange=function(){
                 if(ajax.readyState === 4 && ajax.status ===200){
-                    win.location.href="financas";
+                    win.location.href="unidades";
                 }
             };
             ajax.send();
@@ -22,8 +22,8 @@
         }
     }
 
-    if(doc.querySelector('.delF')){
-        let btn=doc.querySelectorAll('.delF');
+    if(doc.querySelector('.delUni')){
+        let btn=doc.querySelectorAll('.delUni');
         for(let i=0; i<btn.length; i++){
             btn[i].addEventListener('click', confirmDel, false);
         }

@@ -41,8 +41,22 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="row">
-         
-            
+          <div class="content">
+            <div class="text-center">
+              <a href="{{route('vacinas.index')}}">
+                <button class="btn btn-primary">Vacinas</button>
+              </a>
+              <a href="{{route('pessoas.index')}}">
+                <button class="btn btn-primary">Pessoas</button>
+              </a>
+              <a href="{{route('unidades.index')}}">
+                <button class="btn btn-primary">Unidades</button>
+              </a>
+              <a href="{{route('registros.index')}}">
+                <button class="btn btn-primary">Registros</button>
+              </a>
+            </div>
+          </div>
       </div>
     </div>
     

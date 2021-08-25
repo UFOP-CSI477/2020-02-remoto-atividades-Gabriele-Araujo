@@ -53,8 +53,8 @@ Coded by www.creative-tim.com
     </div>
   </div>
 
-  <script src="{{ asset('assets/js/javascript.js') }}"></script>
-  <script src="{{ asset('assets/js/javascriptBanco.js') }}"></script>
+  <script src="{{ asset('assets/js/javascriptUni.js') }}"></script>
+  <script src="{{ asset('assets/js/javascriptReg.js') }}"></script>
 
   <!--   Core JS Files   -->
   <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>

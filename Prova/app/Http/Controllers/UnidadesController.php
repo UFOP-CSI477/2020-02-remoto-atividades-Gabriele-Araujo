@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Unidades;
 
 class UnidadesController extends Controller
 {
+    private $objUnidades;
+
+    public function __construct()
+    {
+        $this->objUnidades = new Unidades();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,8 @@ class UnidadesController extends Controller
      */
     public function index()
     {
-        return view('unidades');
+        $unidade = Unidades::orderBy('nome')->get();
+        return view('unidades', ['unidade'=>$unidade]);
     }
 
     /**
@@ -79,6 +88,7 @@ class UnidadesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delUni=$this->objUnidades->destroy($id);
+        return($delUni)?"sim":"não";
     }
 }

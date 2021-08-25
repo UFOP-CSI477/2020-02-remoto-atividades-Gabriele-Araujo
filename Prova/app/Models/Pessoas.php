@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pessoas extends Model
 {
     use HasFactory;
+    public $timestamps = false; 
     protected $table='pessoas';
+    protected $fillable=['id', 'nome', 'bairro', 'cidade', 'data_nascimento'];
 }

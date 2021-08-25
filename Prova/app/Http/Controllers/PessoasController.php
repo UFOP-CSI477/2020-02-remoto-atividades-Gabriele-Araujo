@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pessoas;
+use App\Http\Requests\PessoasRequest;
 
 class PessoasController extends Controller
 {
+    private $objPessoas;
+
+    public function __construct()
+    {
+        $this->objPessoas = new Pessoas();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,8 @@ class PessoasController extends Controller
      */
     public function index()
     {
-        return view('pessoas');
+        $pessoa = Pessoas::orderBy('nome')->get();
+        return view('pessoas.index', ['pessoa'=>$pessoa]);
     }
 
     /**
@@ -54,9 +64,9 @@ class PessoasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Pessoas $pessoa)
     {
-        //
+        return view('pessoas.edit', ['pessoa'=>$pessoa]);
     }
 
     /**
@@ -66,9 +76,13 @@ class PessoasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PessoasRequest $request, Pessoas $pessoa)
     {
-        //
+        $pessoa->fill($request->all());
+        $pessoa->save();
+
+        session()->flash('mensagem', 'Pessoa atualizada com sucesso!');
+        return redirect()->route('pessoas.index');
     }
 
     /**

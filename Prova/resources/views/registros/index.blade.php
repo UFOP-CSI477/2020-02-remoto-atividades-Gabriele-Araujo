@@ -34,7 +34,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Vacinas</a>
+            <a class="navbar-brand" href="javascript:;">Pessoas</a>
           </div>
         </div>
       </nav>
@@ -48,19 +48,31 @@
 
                     <thead class="text-primary">
                       <th class="text-center">ID</th>
-                      <th class="text-center">Nome</th>
-                      <th class="text-center">Fabricante</th>
-                      <th class="text-center">Doses</th>
+                      <th class="text-center">Pessoa</th>
+                      <th class="text-center">Unidade</th>
+                      <th class="text-center">Vacina</th>
+                      <th class="text-center">Dose</th>
+                      <th class="text-center">Data</th>
                     </thead>
 
                     <tbody>
                     
-                    @foreach($vacinas as $v)
+                    @foreach($registro as $r)
                         <tr>
-                          <td class="text-center">{{ $v->id }}</td>
-                          <td class="text-center">{{ $v->nome }}</td>
-                          <td class="text-center">{{ $v->fabricante }}</td>
-                          <td class="text-center">{{ $v->doses }}</td>
+                          <td class="text-center">{{ $r->id }}</td>
+                          <td class="text-center">{{ $r->pessoa_id }}</td>
+                          <td class="text-center">{{ $r->unidade_id }}</td>
+                          <td class="text-center">{{ $r->vacina_id }}</td>
+                          <td class="text-center">{{ $r->dose }}</td>
+                          <td class="text-center">{{ $r->data }}</td>
+                          <td class="text-center">
+                            <a href="{{route('registros.edit', $r->id)}}">
+                                <button class="btn btn-success">Editar</button>
+                            </a>
+                            <a href="{{route('registros.destroy', $r->id)}}" class="delReg">
+                                <button class="btn btn-success">Deletar</button>
+                            </a> 
+                          </td>
                         </tr>
                     @endforeach
                     
@@ -70,16 +82,17 @@
 
                 <div class="content">
                     <div class="text-center">
-                        <a href="{{route('vacinas.create')}}">
+                        <a href="{{url('administrativo')}}">
+                            <button class="btn btn-primary">Voltar</button>
+                        </a>    
+                        <a href="{{route('registros.create')}}">
                             <button class="btn btn-success">Inserir</button>
                         </a>
                     </div>
                 </div>
-
               </div>
         </div>
 
-    
       </div>
     </div>
     

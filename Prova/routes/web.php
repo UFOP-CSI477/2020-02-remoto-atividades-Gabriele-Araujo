@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\Controller@inicial');
-Route::get('/geral', 'App\Http\Controllers\Controller@geral');
+Route::resource('/geral', App\Http\Controllers\GeralController::class);
 Route::get('/administrativo', 'App\Http\Controllers\Controller@administrativo');
-Route::get('/pessoas', 'App\Http\Controllers\PessoasController@index');
-Route::get('/registros', 'App\Http\Controllers\RegistrosController@index');
-Route::get('/unidades', 'App\Http\Controllers\UnidadesController@index');
+Route::resource('/pessoas', App\Http\Controllers\PessoasController::class);
+Route::resource('/registros', App\Http\Controllers\RegistrosController::class);
+Route::resource('/unidades', App\Http\Controllers\UnidadesController::class);
 Route::resource('/vacinas', App\Http\Controllers\VacinasController::class);

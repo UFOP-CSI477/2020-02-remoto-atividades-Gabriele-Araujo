@@ -22,7 +22,7 @@ class VacinasController extends Controller
     public function index()
     {
         $vacinas = Vacinas::orderBy('nome')->get();
-        return view('vacinas', ['vacinas'=>$vacinas]);
+        return view('vacinas.index', ['vacinas'=>$vacinas]);
     }
 
     /**

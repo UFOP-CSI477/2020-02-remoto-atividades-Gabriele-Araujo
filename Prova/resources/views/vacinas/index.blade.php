@@ -34,7 +34,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Pessoas</a>
+            <a class="navbar-brand" href="javascript:;">Vacinas</a>
           </div>
         </div>
       </nav>
@@ -49,23 +49,18 @@
                     <thead class="text-primary">
                       <th class="text-center">ID</th>
                       <th class="text-center">Nome</th>
-                      <th class="text-center">Bairro</th>
-                      <th class="text-center">Cidade</th>
+                      <th class="text-center">Fabricante</th>
+                      <th class="text-center">Doses</th>
                     </thead>
 
                     <tbody>
                     
-                    @foreach($unidade as $u)
+                    @foreach($vacinas as $v)
                         <tr>
-                          <td class="text-center">{{ $u->id }}</td>
-                          <td class="text-center">{{ $u->nome }}</td>
-                          <td class="text-center">{{ $u->bairro }}</td>
-                          <td class="text-center">{{ $u->cidade }}</td>
-                          <td class="text-center">
-                            <a href="{{route('unidades.destroy', $u->id)}}" class="delUni">
-                                <button class="btn btn-success">Deletar</button>
-                            </a> 
-                          </td>
+                          <td class="text-center">{{ $v->id }}</td>
+                          <td class="text-center">{{ $v->nome }}</td>
+                          <td class="text-center">{{ $v->fabricante }}</td>
+                          <td class="text-center">{{ $v->doses }}</td>
                         </tr>
                     @endforeach
                     
@@ -78,7 +73,9 @@
                         <a href="{{url('administrativo')}}">
                             <button class="btn btn-primary">Voltar</button>
                         </a>    
-                        
+                        <a href="{{route('vacinas.create')}}">
+                            <button class="btn btn-success">Inserir</button>
+                        </a>
                     </div>
                 </div>
               </div>

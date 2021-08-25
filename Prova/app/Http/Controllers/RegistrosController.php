@@ -3,9 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Registros;
+use App\Models\Pessoas;
+use App\Models\Unidades;
+use App\Models\Vacinas;
+use App\Http\Requests\RegistrosRequest;
 class RegistrosController extends Controller
 {
+    private $objRegistros;
+    private $objPessoas;
+    private $objUnidades;
+    private $objVacina;
+
+    public function __construct()
+    {
+        $this->objRegistros = new Registros();
+        $this->objPessoas = new Pessoas();
+        $this->objUnidades = new Unidades();
+        $this->objVacina = new Vacinas();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +30,8 @@ class RegistrosController extends Controller
      */
     public function index()
     {
-        return view('registros');
+        $registro = Registros::orderBy('id')->get();
+        return view('registros.index', ['registro', $registro]);
     }
 
     /**
@@ -23,7 +41,10 @@ class RegistrosController extends Controller
      */
     public function create()
     {
-        //
+        $pessoa = Pessoas::get();
+        $unidade = Unidades::get();
+        $vacina = Vacinas::get();
+        return view('registros.create', ['pessoa'=>$pessoa], ['unidade'=>$unidade], ['vacina'=>$vacina]);
     }
 
     /**
@@ -32,9 +53,11 @@ class RegistrosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegistrosRequest $request)
     {
-        //
+        Registros::create($request->all());
+        session()->flash('mensagem', 'Registro criado com sucesso!');
+        return redirect()->route('registros.index');
     }
 
     /**
@@ -54,9 +77,9 @@ class RegistrosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Registros $registro)
     {
-        //
+        return view('registros.edit', ['registro'=>$registro]);
     }
 
     /**
@@ -66,9 +89,13 @@ class RegistrosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RegistroRequest $request, Registros $registro)
     {
-        //
+        $registro->fill($request->all());
+        $registro->save();
+
+        session()->flash('mensagem', 'Registro atualizada com sucesso!');
+        return redirect()->route('registros.index');
     }
 
     /**
@@ -79,6 +106,7 @@ class RegistrosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delReg=$this->objRegistros->destroy($id);
+        return($delReg)?"sim":"não";
     }
 }

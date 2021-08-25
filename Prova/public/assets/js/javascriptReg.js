@@ -13,7 +13,7 @@
             ajax.setRequestHeader('X-CSRF-TOKEN', token);
             ajax.onreadystatechange=function(){
                 if(ajax.readyState === 4 && ajax.status ===200){
-                    win.location.href="despesas";
+                    win.location.href="registros";
                 }
             };
             ajax.send();
@@ -22,8 +22,8 @@
         }
     }
 
-    if(doc.querySelector('.del')){
-        let btn=doc.querySelectorAll('.del');
+    if(doc.querySelector('.delReg')){
+        let btn=doc.querySelectorAll('.delReg');
         for(let i=0; i<btn.length; i++){
             btn[i].addEventListener('click', confirmDel, false);
         }
