@@ -22,7 +22,9 @@ class UnidadesFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nome' => $this->faker->randomElement(['Hospital A', 'Posto de Saúde A', 'Centro de Saúde A', 'Hospital B', 'Posto de Saúde B', 'Centro de Saúde B', 'Hospital C', 'Posto de Saúde C', 'Centro de Saúde C']),
+            'bairro' => $this->faker->streetName,
+            'cidade' => $this->faker->city
         ];
     }
 }

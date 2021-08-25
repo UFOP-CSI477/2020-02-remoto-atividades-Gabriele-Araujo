@@ -22,7 +22,7 @@ class VacinasFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nome' => $this->faker->randomElement(['CoronaVac', 'AstraZeneca', 'Pfizer', 'Janssen', 'Sputnik V'])
         ];
     }
 }
