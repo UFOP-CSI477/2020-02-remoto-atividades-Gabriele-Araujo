@@ -55,19 +55,19 @@
                     
                         <tr>
                           <td class="text-center text-primary">Dose única</td>
-                          <td class="text-center"></td>
+                          <td class="text-center">{{$dose0}}</td>
                         </tr>
                         <tr>
                           <td class="text-center text-primary">Primeira dose</td>
-                          <td class="text-center"></td>
+                          <td class="text-center">{{$dose1}}</td>
                         </tr>
                         <tr>
                           <td class="text-center text-primary">Segunda dose</td>
-                          <td class="text-center"></td>
+                          <td class="text-center">{{$dose2}}</td>
                         </tr>
                         <tr>
                           <td class="text-center text-primary">TOTAL GERAL</td>
-                          <td class="text-center"></td>
+                          <td class="text-center">{{$dose0+$dose1+$dose2}}</td>
                         </tr>
                     
                     </tbody>

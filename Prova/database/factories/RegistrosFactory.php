@@ -25,7 +25,7 @@ class RegistrosFactory extends Factory
             'pessoa_id' => Pessoas::factory(),
             'unidade_id' => Unidades::factory(),
             'vacina_id' => Vacinas::factory(),
-            'doses' => $this->faker->randomElement(['1', '2']),
+            'doses' => $this->faker->randomElement([0, 1, 2]),
             'data' => $this->faker->date
         ];
     }
